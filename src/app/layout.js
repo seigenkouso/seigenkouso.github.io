@@ -1,31 +1,20 @@
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
-  title: "Lun Tian", 
-  icons: {
-    icon: '/icon.png', // <--- 指定你的图标路径
-  },
+  title: "Lun Tian",
   description: "Academic Homepage of Lun Tian",
+  // 这里配置图标，指向你 public 目录下的头像文件
+  icons: {
+    icon: '/icon.png',      
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
