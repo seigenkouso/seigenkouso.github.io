@@ -16,7 +16,7 @@ const PROFILE = {
     <>
       <p className="mb-4">
         I'm an undergrad student in <strong>College of Future Information Technology, Fudan University</strong>. 
-        Now I'm under the supervision of <a href="#" className="text-blue-700 hover:underline">Prof. Chongbin Xu</a>.
+        Now I'm under the supervision of <a href="http://www.it.fudan.edu.cn/Data/View/1159" className="text-blue-700 hover:underline">Prof. Chongbin Xu</a>.
       </p>
       <p>
         My research interests are mainly about <strong>telecommunication engineering</strong>, <strong>machine learning</strong>, and <strong>medical image computing</strong>.
