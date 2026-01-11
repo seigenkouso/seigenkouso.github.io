@@ -4,9 +4,9 @@ export const metadata = {
   title: "Lun Tian",
   description: "Academic Homepage of Lun Tian",
   icons: {
-    icon: "C:/Users/seesea Amoi/my-website/public/icon.png",      
-    shortcut: "C:/Users/seesea Amoi/my-website/public/icon.png",
-    apple: "C:/Users/seesea Amoi/my-website/public/icon.png",
+    icon: "/icon.png",      
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
