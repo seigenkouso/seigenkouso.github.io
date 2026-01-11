@@ -68,6 +68,7 @@ const PUBLICATIONS = [
 ];
 
 const INTERNSHIPS = [
+  /*
   {
     company: "Microsoft Research Asia (MSRA)",
     position: "Research Intern",
@@ -82,18 +83,23 @@ const INTERNSHIPS = [
     time: "Jun. 2025 – Sep. 2025",
     desc: "Focused on 3D reconstruction algorithms."
   }
+  */
 ];
 
 const SERVICES = [
+  /*
   "Reviewer for IEEE Transactions on Signal Processing",
   "Reviewer for CVPR 2025, ICCV 2025",
   "Teaching Assistant for 'Signals and Systems', Fudan University, Fall 2024"
+  */
 ];
 
 const AWARDS = [
+  /*
   "National Scholarship (Top 0.2%), Ministry of Education of China, 2025",
   "First Prize, National Undergraduate Electronics Design Contest, 2024",
   "Academic Excellence Scholarship, Fudan University, 2023-2025"
+  */
 ];
 
 // --- 组件 ---
