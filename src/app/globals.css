@@ -1,46 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-
-/* 2. 平替字体 (Outfit) - 作为 Google Sans 加载失败时的最佳备选 */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 3. 直接定义 Google Sans (绕过不稳定的 Google CSS 接口) */
-@font-face {
-  font-family: 'Google Sans';
-  font-style: normal;
-  font-weight: 400;
-  /* 优先读取本地，没有则尝试直接加载文件 */
-  src: local('Google Sans'), local('Product Sans'), 
-       url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Google Sans';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Google Sans Medium'), local('Product Sans Medium'),
-       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLU94trp.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Google Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Google Sans Bold'), local('Product Sans Bold'),
-       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLv14trp.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* 4. 使用 Tailwind 的 layer 语法强制覆盖默认字体 */
+/* 2. 使用 Tailwind 的 @layer base 强制覆盖全站字体 */
 @layer base {
   html, body {
-    /* 强制应用字体栈：Google Sans -> Outfit -> 系统默认 */
-    font-family: 'Google Sans', 'Outfit', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* 策略：首选 Outfit (Google Sans 风格)，如果用户本地装了 Google Sans 也会生效 */
+    font-family: 'Outfit', 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     @apply bg-white text-slate-900;
   }
 

@@ -117,24 +117,9 @@ export default function AcademicHomepage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
       
-      {/* 字体设置 */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-        
-        @font-face {
-          font-family: 'Google Sans';
-          src: url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
-          font-display: swap;
-        }
-
-        body {
-          font-family: 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        
-        h1, h2, h3, .serif {
-          font-family: 'Crimson Text', serif;
-        }
-      `}</style>
+      {/* 注意：这里不再需要 <style> 标签了 
+         字体已经在 globals.css 中全局定义
+      */}
 
       {/* 导航栏 */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
@@ -182,7 +167,7 @@ export default function AcademicHomepage() {
           {/* Avatar & Contact Info */}
           <div className="flex flex-col gap-6">
             
-            {/* 2. 修改后的头像部分 */}
+            {/* 头像显示区域 */}
             <div className="w-48 h-48 md:w-full md:h-auto aspect-square bg-slate-100 rounded-sm overflow-hidden border border-slate-200 shadow-sm mx-auto md:mx-0">
                <img 
                  src={PROFILE.avatar} 
