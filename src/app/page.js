@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, Youtube, FileText, ExternalLink, Download, MapPin, ChevronDown, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Github, Linkedin, Youtube, MapPin, Menu, X } from 'lucide-react';
 
 // --- 学术主页数据配置 ---
 
@@ -10,7 +10,7 @@ const PROFILE = {
   title: "Undergraduate Student",
   university: "Fudan University",
   department: "College of Future Information Technology",
-  // 你的真实头像链接，或者放在 public 文件夹下的图片路径
+  // 1. 这里修改为你的文件名，不需要加 /public
   avatar: "/avatar.jpg", 
   bio: (
     <>
@@ -24,7 +24,7 @@ const PROFILE = {
     </>
   ),
   contact: {
-    email: "seeseaamoi@gmail.com", // 建议换成学校邮箱如 .edu.cn
+    email: "seeseaamoi@gmail.com", 
     github: "https://github.com/seigenkouso",
     linkedin: "https://www.linkedin.com/in/amoi-seesea-31a738397/",
     youtube: "https://www.youtube.com/@seigenkouso",
@@ -33,10 +33,12 @@ const PROFILE = {
 };
 
 const NEWS = [
-  { date: "Jan 2026", content: "First time creating my personal webpage." }
+  { date: "Dec 2025", content: "One paper accepted to CVPR 2026! 🎉" },
+  { date: "Oct 2025", content: "Started my research internship at Microsoft Research Asia (MSRA)." },
+  { date: "Sep 2025", content: "Awarded the National Scholarship (Top 1%)." }
 ];
 
-
+// --- Publications 数据 (模块保留，内容暂时注释) ---
 const PUBLICATIONS = [
   /*
   {
@@ -65,10 +67,7 @@ const PUBLICATIONS = [
   */
 ];
 
-
-
 const INTERNSHIPS = [
-  /*
   {
     company: "Microsoft Research Asia (MSRA)",
     position: "Research Intern",
@@ -83,28 +82,19 @@ const INTERNSHIPS = [
     time: "Jun. 2025 – Sep. 2025",
     desc: "Focused on 3D reconstruction algorithms."
   }
-  */
 ];
 
-
-
 const SERVICES = [
-  /*
   "Reviewer for IEEE Transactions on Signal Processing",
   "Reviewer for CVPR 2025, ICCV 2025",
   "Teaching Assistant for 'Signals and Systems', Fudan University, Fall 2024"
-  */
 ];
 
-
 const AWARDS = [
-  /*
   "National Scholarship (Top 0.2%), Ministry of Education of China, 2025",
   "First Prize, National Undergraduate Electronics Design Contest, 2024",
   "Academic Excellence Scholarship, Fudan University, 2023-2025"
-  */
 ];
-
 
 // --- 组件 ---
 
@@ -114,7 +104,7 @@ export default function AcademicHomepage() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'News', href: '#news' },
-    { name: 'Publications', href: '#publications' },
+    { name: 'Publications', href: '#publications' }, 
     { name: 'Internship', href: '#internship' },
     { name: 'Service', href: '#service' },
     { name: 'Awards', href: '#awards' },
@@ -124,7 +114,7 @@ export default function AcademicHomepage() {
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
       
       {/* 字体设置 */}
-            <style>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         
         @font-face {
@@ -187,11 +177,14 @@ export default function AcademicHomepage() {
         <section id="home" className="grid md:grid-cols-[240px_1fr] gap-10 items-start">
           {/* Avatar & Contact Info */}
           <div className="flex flex-col gap-6">
+            
+            {/* 2. 修改后的头像部分 */}
             <div className="w-48 h-48 md:w-full md:h-auto aspect-square bg-slate-100 rounded-sm overflow-hidden border border-slate-200 shadow-sm mx-auto md:mx-0">
-               {/* 这里的 SVG 是一个占位符，请替换为你的真实照片 <img src="..." /> */}
-               <div className="w-full h-full flex items-center justify-center text-slate-300 bg-slate-50">
-                  <span className="serif text-4xl italic">Photo</span>
-               </div>
+               <img 
+                 src={PROFILE.avatar} 
+                 alt={PROFILE.name} 
+                 className="w-full h-full object-cover"
+               />
             </div>
             
             <div className="space-y-3 text-sm text-slate-600">
@@ -256,7 +249,6 @@ export default function AcademicHomepage() {
           <div className="space-y-8">
             {PUBLICATIONS.map((pub) => (
               <div key={pub.id} className="flex gap-4 group">
-                {/* 序号或缩略图 (可选) */}
                 <div className="hidden sm:block w-32 h-20 bg-slate-50 border border-slate-100 rounded-sm flex-shrink-0"></div>
                 
                 <div className="flex-1">
@@ -264,7 +256,6 @@ export default function AcademicHomepage() {
                     {pub.title}
                   </h3>
                   <p className="text-slate-600 mb-1">
-                    {/* 高亮自己的名字 */}
                     {pub.authors.split(', ').map((author, i, arr) => (
                       <span key={i}>
                         {author.includes("Lun Tian") ? <strong className="text-slate-900">{author}</strong> : author}
@@ -346,7 +337,7 @@ export default function AcademicHomepage() {
 
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-8 border-t border-slate-100 text-center text-slate-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Lun Tian. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</p>
         <p className="mt-1">
           Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
         </p>
