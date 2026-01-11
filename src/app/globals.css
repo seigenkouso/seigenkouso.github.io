@@ -1,33 +1,51 @@
-/* 1. @import 必须放在最顶端 */
-/* 引入学术标题字体 (Crimson Text) */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
-/* 引入 Outfit 作为 Google Sans 的完美平替 (风格极度相似，且加载稳定) */
+/* 2. 平替字体 (Outfit) - 作为 Google Sans 加载失败时的最佳备选 */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-
-/* 引入 Inter 作为基础后备 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 2. 定义字体策略 */
-/* 这里不再尝试加载那个不稳定的 Google Sans CDN 链接，而是依赖本地或回退到 Outfit */
+/* 3. 直接定义 Google Sans (绕过不稳定的 Google CSS 接口) */
 @font-face {
   font-family: 'Google Sans';
-  src: local('Google Sans'), local('Product Sans');
+  font-style: normal;
+  font-weight: 400;
+  /* 优先读取本地，没有则尝试直接加载文件 */
+  src: local('Google Sans'), local('Product Sans'), 
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
   font-display: swap;
 }
 
-/* 3. 全局应用 */
-body {
-  /* 策略：本地有 Google Sans 就用 -> 没有就用 Outfit (视觉一样) -> 再没有就用 Inter */
-  font-family: 'Google Sans', 'Outfit', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  @apply bg-white text-slate-900;
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Google Sans Medium'), local('Product Sans Medium'),
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLU94trp.woff2') format('woff2');
+  font-display: swap;
 }
 
-/* 4. 标题强制使用衬线体 */
-h1, h2, h3, .serif {
-  font-family: 'Crimson Text', serif;
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Google Sans Bold'), local('Product Sans Bold'),
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLv14trp.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* 4. 使用 Tailwind 的 layer 语法强制覆盖默认字体 */
+@layer base {
+  html, body {
+    /* 强制应用字体栈：Google Sans -> Outfit -> 系统默认 */
+    font-family: 'Google Sans', 'Outfit', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    @apply bg-white text-slate-900;
+  }
+
+  /* 标题强制使用衬线体 */
+  h1, h2, h3, .serif {
+    font-family: 'Crimson Text', serif;
+  }
 }
