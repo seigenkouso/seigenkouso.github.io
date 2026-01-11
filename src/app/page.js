@@ -115,11 +115,20 @@ export default function AcademicHomepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div 
+      className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900"
+      style={{ fontFamily: '"Century Gothic", CenturyGothic, AppleGothic, sans-serif' }}
+    >
       
-      {/* 注意：这里不再需要 <style> 标签了 
-         字体已经在 globals.css 中全局定义
-      */}
+      {/* 字体设置：局部引入衬线体，非衬线体直接使用内联样式设置的 Century Gothic */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        /* 标题保留衬线体 */
+        h1, h2, h3, .serif {
+          font-family: 'Crimson Text', serif;
+        }
+      `}</style>
 
       {/* 导航栏 */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">

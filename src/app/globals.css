@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 2. 使用 Tailwind 的 @layer base 强制覆盖全站字体 */
-@layer base {
-  html, body {
-    /* 策略：首选 Outfit (Google Sans 风格)，如果用户本地装了 Google Sans 也会生效 */
-    font-family: 'Outfit', 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    @apply bg-white text-slate-900;
-  }
-
-  /* 标题强制使用衬线体 */
-  h1, h2, h3, .serif {
-    font-family: 'Crimson Text', serif;
-  }
-}
