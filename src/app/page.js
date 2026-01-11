@@ -33,9 +33,7 @@ const PROFILE = {
 };
 
 const NEWS = [
-  { date: "Dec 2025", content: "One paper accepted to CVPR 2026! 🎉" },
-  { date: "Oct 2025", content: "Started my research internship at Microsoft Research Asia (MSRA)." },
-  { date: "Sep 2025", content: "Awarded the National Scholarship (Top 1%)." }
+  { date: "Jan 2026", content: "First time building my personal homepage." }
 ];
 
 // --- Publications 数据 (模块保留，内容暂时注释) ---
