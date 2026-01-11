@@ -1,24 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 引入学术标题字体 (Crimson Text) */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-
-/* 定义 Google Sans */
+/* 2. 手动定义 Google Sans */
 @font-face {
   font-family: 'Google Sans';
   src: url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
   font-display: swap;
 }
 
-/* 全局应用 */
+/* 3. 全局应用 */
 body {
   font-family: 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   @apply bg-white text-slate-900;
 }
 
-/* 标题强制使用衬线体 */
+/* 4. 标题强制使用衬线体 */
 h1, h2, h3, .serif {
   font-family: 'Crimson Text', serif;
 }
