@@ -117,7 +117,7 @@ export default function AcademicHomepage() {
   return (
     <div 
       className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900"
-      style={{ fontFamily: '"Century Gothic", CenturyGothic, AppleGothic, sans-serif' }}
+      style={{ fontFamily: 'Meiryo, "Meiryo UI", "MS PGothic", sans-serif' }}
     >
       
       {/* 字体设置：局部引入衬线体，非衬线体直接使用内联样式设置的 Century Gothic */}
