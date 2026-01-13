@@ -333,13 +333,14 @@ export default function AcademicHomepage() {
 
       </main>
 
-      {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 py-8 border-t border-slate-100 text-center text-slate-500 text-sm">
+      {/* Footer (Hidden) */}
+      {/* <footer className="max-w-5xl mx-auto px-6 py-8 border-t border-slate-100 text-center text-slate-500 text-sm">
         <p>&copy; {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</p>
         <p className="mt-1">
           Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
         </p>
-      </footer>
+      </footer> 
+      */}
     </div>
   );
 }
