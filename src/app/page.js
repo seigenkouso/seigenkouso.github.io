@@ -139,11 +139,11 @@ export default function AcademicHomepage() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
-            {navLinks.map(link => (
+            {/*navLinks.map(link => (
               <a key={link.name} href={link.href} className="hover:text-blue-700 transition-colors">
                 {link.name}
               </a>
-            ))}
+            ))*/}
           </div>
 
           {/* Mobile Menu Button */}
