@@ -134,7 +134,7 @@ export default function AcademicHomepage() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="text-xl font-bold serif tracking-tight text-slate-900">
-            {PROFILE.name}
+            {/*PROFILE.name*/}
           </a>
 
           {/* Desktop Nav */}
