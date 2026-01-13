@@ -130,45 +130,6 @@ export default function AcademicHomepage() {
         }
       `}</style>
 
-      {/* 导航栏 */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="text-xl font-bold serif tracking-tight text-slate-900">
-            {/*PROFILE.name*/}
-          </a>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
-            {/*navLinks.map(link => (
-              <a key={link.name} href={link.href} className="hover:text-blue-700 transition-colors">
-                {link.name}
-              </a>
-            ))*/}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Nav Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-4 shadow-lg">
-            {navLinks.map(link => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="block text-slate-600 font-medium hover:text-blue-700"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        )}
-      </nav>
-
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-20">
         
         {/* --- Header / Bio Section --- */}
