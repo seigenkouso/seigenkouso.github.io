@@ -33,7 +33,14 @@ const PROFILE = {
 };
 
 const NEWS = [
-  { date: "Jan 11, 2026", content: "First time building my personal homepage." }
+  { 
+    date: "Jan 26, 2026", 
+    content: <>Develop a budgeting app – <i>Manage Your Bills</i></> 
+  },
+  { 
+    date: "Jan 11, 2026", 
+    content: "First time building my personal homepage." 
+  }
 ];
 
 // --- Publications 数据 (模块保留，内容暂时注释) ---
