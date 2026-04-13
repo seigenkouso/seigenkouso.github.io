@@ -31,9 +31,8 @@ const PROFILE = {
 };
 
 const NEWS = [
-  { date: "Apr 2026", content: "Updating my personal homepage after a long break." },
-  { date: "Jan 26, 2026", content: <>Developed a budgeting app – <i>Manage Your Bills</i></> },
-  { date: "Jan 11, 2026", content: "First version of personal homepage launched." }
+  /*{ date: "Jan 26, 2026", content: <>Developed a budgeting app – <i>Manage Your Bills</i></> },
+  { date: "Jan 11, 2026", content: "First version of personal homepage launched." }*/
 ];
 
 // --- 新增：Projects 数据 ---
@@ -43,15 +42,9 @@ const PROJECTS = [
     type: "Android Application",
     tech: ["Kotlin", "Jetpack Compose", "AI Image Recognition"],
     desc: "A personal financial management application that utilizes AI to recognize and categorize expenses from receipt images.",
-    link: "#"
+    link: "https://github.com/seigenkouso/ManageYourBills"
   },
-  {
-    title: "TripFlow",
-    type: "Cross-platform App",
-    tech: ["Flutter", "Dart", "AI Integration"],
-    desc: "An AI-driven travel planning application designed to streamline itinerary synchronization and data management.",
-    link: "#"
-  },
+
   {
     title: "Ichininsho",
     type: "Productivity Tool",
@@ -62,18 +55,18 @@ const PROJECTS = [
 ];
 
 const INTERNSHIPS = [
-  {
+  /*{
     company: "Microsoft Research Asia (MSRA)",
     position: "Research Intern",
     location: "Beijing, China",
     time: "Oct. 2025 – Present",
     desc: "Working on foundation models for healthcare."
-  }
+  }*/
 ];
 
 const AWARDS = [
-  "National Scholarship (Top 0.2%), 2025",
-  "First Prize, National Undergraduate Electronics Design Contest, 2024"
+  /*"National Scholarship (Top 0.2%), 2025",
+  "First Prize, National Undergraduate Electronics Design Contest, 2024"*/
 ];
 
 // --- 组件 ---
