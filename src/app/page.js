@@ -15,7 +15,7 @@ const PROFILE = {
     <>
       <p className="mb-4">
         I'm an undergrad student in <strong>College of Future Information Technology, Fudan University</strong>. 
-        Now I'm under the supervision of <a href="#" className="text-blue-700 hover:underline">Prof. Chongbin Xu</a>.
+        Now I'm under the supervision of <a href="http://www.it.fudan.edu.cn/En/Data/View/1159" className="text-blue-700 hover:underline">Prof. Chongbin Xu</a>.
       </p>
       <p>
         My research interests are mainly about <strong>telecommunication engineering</strong>, <strong>machine learning</strong>, and <strong>medical image computing</strong>.
@@ -103,6 +103,10 @@ export default function AcademicHomepage() {
                 <a href={`mailto:${PROFILE.contact.email}`} className="hover:text-blue-700">{PROFILE.contact.email}</a>
               </div>
               <div className="flex items-center gap-3">
+                <Linkedin size={16} />
+                <a href={PROFILE.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-blue-700">LinkedIn</a>
+              </div>
+              <div className="flex items-center gap-3">
                 <Github size={16} />
                 <a href={PROFILE.contact.github} target="_blank" className="hover:text-blue-700">Github</a>
               </div>
@@ -142,8 +146,12 @@ export default function AcademicHomepage() {
             {PROJECTS.map((project, index) => (
               <div key={index} className="p-6 rounded-lg border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-md transition-all group">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">{project.title}</h3>
-                  <Code size={18} className="text-slate-300" />
+                  <a href={project.link} target="_blank" rel="noreferrer" className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">{project.title}</h3>
+                  </a>
+                  <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-300 hover:text-blue-600 transition-colors">
+                    <ExternalLink size={18} />
+                  </a>
                 </div>
                 <p className="text-sm text-blue-700 font-medium mb-2">{project.type}</p>
                 <p className="text-slate-600 text-sm mb-4 leading-relaxed">{project.desc}</p>
