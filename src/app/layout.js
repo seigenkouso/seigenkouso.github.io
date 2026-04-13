@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Lun Tian",
+  title: "Seigenkouso Lun",
   description: "Academic Homepage of Lun Tian",
   icons: {
     icon: '/icon.png?v=2',      
